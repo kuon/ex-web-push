@@ -1,7 +1,7 @@
 defmodule WebPush.Config do
   use Agent
 
-  def start_link() do
+  def start_link(_) do
     seed =
       Application.get_env(:web_push, :vapid_secret)
       |> Base.decode64!()
