@@ -1,6 +1,6 @@
 defmodule WebPush.Vapid do
-  import WebPush.Config, only: [json_library: 0, public_key: 0,
-    secret_key: 0, sub: 0]
+  import WebPush.Config,
+    only: [json_library: 0, public_key: 0, secret_key: 0, sub: 0]
 
   def auth_header(subscription) do
     aud =
@@ -30,8 +30,9 @@ defmodule WebPush.Vapid do
 
     jwt = jwt_to_sign <> "." <> jwt_sig
 
-    pk = public_key()
-    |> Base.url_encode64(padding: false)
+    pk =
+      public_key()
+      |> Base.url_encode64(padding: false)
 
     {:ok, "vapid t=" <> jwt <> ",k=" <> pk}
   end
