@@ -34,7 +34,7 @@ defmodule WebPush.MixProject do
   # Type `mix help deps` for examples and options.
   defp deps do
     [
-      {:req, "~> 0.4.0"}
+      {:req, "~> 0.4"}
     ]
   end
 
